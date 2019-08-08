@@ -6,10 +6,10 @@ class Countries extends React.Component {
     this.state = {};
   }
   render() {
-    const { counties } = this.props;
+    const { countries } = this.props;
     return (
       <ul>
-        {counties.map(countie => {
+        {countries.map(countie => {
           return (
             <li key={countie.alpha2Code} onClick={this.props.getCoutieDetails}>
               {countie.name}

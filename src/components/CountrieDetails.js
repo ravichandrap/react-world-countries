@@ -5,10 +5,10 @@ class CountrieDetails extends React.Component {
     this.state = {};
   }
   render() {
-    const { countieDetails } = this.props;
+    const { countrieDetails } = this.props;
     return (
       <div>
-        {countieDetails.map(item => {
+        {countrieDetails.map(item => {
           return (
             <table keay={item.alpha2Code}>
               <tr>

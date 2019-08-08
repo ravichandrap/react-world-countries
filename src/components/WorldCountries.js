@@ -3,13 +3,13 @@ import CountrieDetails from "./CountrieDetails";
 
 import Countries from "./Countries";
 
-class WorldCounties extends React.Component {
+class WorldCountries extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      counties: [],
+      countries: [],
       isLoading: true,
-      countieDetails: []
+      countrieDetails: []
     };
   }
   componentDidMount() {
@@ -17,7 +17,7 @@ class WorldCounties extends React.Component {
       .then(res => res.json())
       .then(
         result => {
-          this.setState({ counties: result, isLoading: true });
+          this.setState({ countries: result, isLoading: true });
         },
         error => {
           this.setState({
@@ -33,15 +33,15 @@ class WorldCounties extends React.Component {
 
     fetch(`https://restcountries.eu/rest/v2/name/${fullName}?fullText=true`)
       .then(res => res.json())
-      .then(countieDetails => {
-        this.setState({ countieDetails });
+      .then(countrieDetails => {
+        this.setState({ countrieDetails });
       });
   };
 
   render() {
     return (
       <div>
-        <div> Wordl Counties</div>
+        <div> Wordl Countries</div>
         <table
           style={{
             width: "100%",
@@ -56,19 +56,19 @@ class WorldCounties extends React.Component {
           <thead>
             <tr>
               <td>Countires</td>
-              <td>Countie Details</td>
+              <td>Countire Details</td>
             </tr>
           </thead>
           <tr>
             <td style={{ width: "50%" }}>
               <Countries
-                counties={this.state.counties}
+                countries={this.state.countries}
                 getCoutieDetails={e => this.getCoutieDetails(e)}
               />
             </td>
 
             <td style={{ width: "50%" }}>
-              <CountrieDetails countieDetails={this.state.countieDetails} />
+              <CountrieDetails countrieDetails={this.state.countrieDetails} />
             </td>
           </tr>
         </table>
@@ -77,4 +77,4 @@ class WorldCounties extends React.Component {
   }
 }
 
-export default WorldCounties;
+export default WorldCountries;

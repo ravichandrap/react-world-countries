@@ -2,7 +2,7 @@ import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
 
-import WorldCountries from "./components/WorldCounties";
+import WorldCountries from "./components/WorldCountries";
 
 function App() {
   return (
